@@ -38,3 +38,36 @@ source ~/.bash_profile
 ## 确认安装
 
 终端中输入: mvn -v
+
+
+## 镜像配置
+
+推荐阿里镜像仓库。
+
+http://maven.aliyun.com/nexus/content/groups/public/
+
+您可以将其设置在~/.m2/settings.xml中作为全局仓库，也可以将其设置在项目中。
+
+全局settings设置
+
+```
+<mirrors>
+    <mirror>
+      <id>alimaven</id>
+      <name>aliyun maven</name>
+  　　<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+      <mirrorOf>central</mirrorOf>        
+    </mirror>
+</mirrors>
+```
+
+项目设置
+
+```
+<repositories>
+    <repository>
+        <id>alimaven</id>
+        <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+    </repository>
+</repositories>
+```
