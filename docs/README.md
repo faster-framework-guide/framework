@@ -8,6 +8,6 @@ Faster-Framework是一款基于Spring Boot，并整合多个三方开源组件�
 
 ## 稳定版本
 
-[![latest](https://img.shields.io/github/v/release/faster-framework/faster-framework-project)](https://github.com/faster-framework/faster-framework-project/releases/latest)
+[![latest](https://badgen.net/github/release/faster-framework/faster-framework-project?icon=github)](https://github.com/faster-framework/faster-framework-project/releases/latest)
 
 您可以订阅[https://github.com/faster-framework/faster-framework-project/releases.atom](https://github.com/faster-framework/faster-framework-project/releases.atom)来获得稳定版发布的通知
