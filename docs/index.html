@@ -34,7 +34,17 @@
         noData: '找不到结果',
         // 搜索标题的最大程级, 1 - 6
         depth: 2
-      }
+      },
+      plugins: [
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            const copryRight = "鲁ICP备18035578号<br/>© "+(new Date().getFullYear())+" Faster-Framework All Rights Reserved.";
+            const youpaiyun = '<div><a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img width="100" src="./_media/youpaiyun.png"/></a></div>';
+            const footer = copryRight +youpaiyun;
+            return html + '\n\n----\n\n' + footer;
+          })
+        }
+      ]
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
