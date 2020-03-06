@@ -53,7 +53,7 @@
       }, plugins: [
         function (hook, vm) {
           hook.beforeEach(function (html) {
-            const copryRight = '<a href="http://www.beian.miit.gov.cn" target="_blank">鲁ICP备18035578号</a><br/>© ' + (new Date().getFullYear()) + ' Faster-Framework All Rights Reserved.';
+            const copryRight = '<a href="http://www.beian.miit.gov.cn" target="_blank" style="color: inherit;font-weight: normal;text-decoration: none;">鲁ICP备18035578号</a><br/>© ' + (new Date().getFullYear()) + ' Faster-Framework All Rights Reserved.';
             const youpaiyun = '<div><a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img width="100" src="./_media/youpaiyun.png"/></a></div>';
             const footer = copryRight + youpaiyun;
             return html + '\n\n----\n\n' + footer;
