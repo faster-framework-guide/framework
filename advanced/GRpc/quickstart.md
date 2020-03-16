@@ -7,7 +7,7 @@ Faster引入了Google的GRpc模块，本篇文章带您快速使用。
 [grpc-java](https://grpc.io/docs/tutorials/basic/java.html)
 
 
-## 引入
+## 引入依赖
 
 ```
 <dependency>

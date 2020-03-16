@@ -1,12 +1,8 @@
 # 快速开始
 
-## 引入
+## 引入依赖
 
 ```
-<dependency>
-    <groupId>cn.org.faster</groupId>
-    <artifactId>spring-boot-starter-web</artifactId>
-</dependency>
 <dependency>
     <groupId>cn.org.faster</groupId>
     <artifactId>spring-boot-starter-kafka</artifactId>

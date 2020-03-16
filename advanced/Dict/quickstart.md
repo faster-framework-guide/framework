@@ -1,44 +1,16 @@
-# 配置
-
-默认情况下，字典每次均从数据库中读取，如果您希望其在缓存中存储，则需要开启缓存。
-
-```
-app:
-    dict:
-        cache: true
-```
-
-此时的缓存取决于缓存模块的设定。
-
-# 字典结构
-
-字典实体定义如下：
+# 快速开始
+## 引入依赖
 
 ```
-@Data
-@EqualsAndHashCode(callSuper = true)
-@TableName("sys_dict")
-public class SysDict extends BaseEntity {
-    /**
-     * 字典key
-     */
-    private String name;
-    /**
-     * 类型
-     */
-    private String type;
-    /**
-     * 字典值
-     */
-    private String dictValue;
-    /**
-     * 展示状态（0.不展示1.展示）
-     */
-    private Integer showStatus;
-}
+<dependency>
+    <groupId>cn.org.faster</groupId>
+    <artifactId>spring-boot-starter-dict</artifactId>
+</dependency>
 ```
 
-# DictFacade
+
+
+## 使用
 
 我们提供了DictFacade门面类来供大家快速调用。
 
@@ -65,3 +37,17 @@ SysDict dict = DictFacade.byTypeAndName(type,name)
 ```
 List<SysDict> list = DictFacade.byType(type)
 ```
+
+
+## 开启缓存
+
+默认情况下，字典每次均从数据库中读取，如果您希望其在缓存中存储，则需要开启缓存。
+
+```
+app:
+    dict:
+        cache: true
+```
+
+此时的缓存取决于缓存模块的设定。
+

@@ -1,13 +1,15 @@
 # 快速开始
 
-MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。
-本节只介绍基本使用，满足日常开发需要，更多进阶使用请查看官网。
+## 依赖引入
 
-[官网地址](https://mp.baomidou.com/guide/)
+```
+<dependency>
+    <groupId>cn.org.faster</groupId>
+    <artifactId>spring-boot-starter-mybatis</artifactId>
+</dependency>
+```
 
-## 1. 引入
-
-基本配置：
+## 配置文件
 
 ```
 spring:
@@ -23,7 +25,7 @@ app:
     password: 密码
 ```
 
-## 2. 创建实体类
+## 创建实体类
 
 ```
 @Data
@@ -35,7 +37,7 @@ public class User {
 }
 ```
 
-## 3. 创建Mapper接口
+## 创建Mapper接口
 可以使用mybatis的@Mapper注解，或者直接继承BaseMapper即可，此处演示继承：
 
 ```
@@ -46,7 +48,7 @@ public interface UserMapper extends BaseMapper<User> {
 BaseMapper实现了诸多常用的方法，可以自行查看，我们无须编写xml文件即可使用内置的方法。
 
 
-## 4. 创建Service
+## 创建Service
 
 
 建立Service，继承ServiceImpl类。
@@ -60,9 +62,9 @@ public class UserService extends ServiceImpl<UserMapper, User> {
 ServiceImpl针对BaseMapper进行了优化，如getOne()不会抛出异常，batch时自动分段。
 无须注入
 
-## 5. 增删改查
+## 增删改查
 
-### 5.1 查询
+### 查询
 
 ```
     /**
@@ -105,7 +107,7 @@ ServiceImpl针对BaseMapper进行了优化，如getOne()不会抛出异常，bat
 
 更多的使用方式，可以直接使用this/super查看。
 
-### 5.2 新增
+### 新增
 
 ```
     /**
@@ -120,7 +122,7 @@ ServiceImpl针对BaseMapper进行了优化，如getOne()不会抛出异常，bat
     }
 ```
 
-### 5.3 更新
+### 更新
 
 ```
 	 /**
@@ -134,7 +136,7 @@ ServiceImpl针对BaseMapper进行了优化，如getOne()不会抛出异常，bat
         return new ResponseEntity(HttpStatus.CREATED);
     }
 ```
-### 5.4 删除
+### 删除
 
 ```
 	 /**
@@ -149,7 +151,7 @@ ServiceImpl针对BaseMapper进行了优化，如getOne()不会抛出异常，bat
     }
 ```
 
-## 6. 自定义xml文件
+## 自定义xml文件
 
 通过以下几个步骤绑定xml与mapper接口。
 
@@ -158,8 +160,8 @@ ServiceImpl针对BaseMapper进行了优化，如getOne()不会抛出异常，bat
 3. 最后我们按照正常的mybatis xml文件的编写方式编写代码即可。
 
 
-## 7. 分页
-### 7.1 基本使用
+## 分页
+### 基本使用
 
 
 ```
@@ -181,7 +183,7 @@ public class User extends BaseEntity{
 ```
 
 
-### 7.2 在xml中的分页
+### 在xml中的分页
 对于在Mapper中自定义的方法，我们需要传入Page对象，并且保证在第一位。
 
 BaseMapper:
@@ -220,7 +222,7 @@ public PageResponse<User> selectUserPage(UserRequest request, Integer state) {
 }
 ```
 
-### 7.4 取消分页
+### 取消分页
 
 设置pageSize为-1时，即可取消分页。同时不会查询count。
 
@@ -229,7 +231,7 @@ PageRequest.mybatis(0,0);//会将0修正为-1。
 PageRequest.mybatis(0,-1);
 ```
 
-### 7.5 取消count
+### 取消count
 有些情况下，分页插件对于复杂的sql无法生成最优的count语句，我们需要编写自己的count。
 
 ```
@@ -237,7 +239,7 @@ PageRequest.mybatis(0,-1);
 pageRequest.setTotal(1);
 ```
 
-### 7.6 获取前N条
+### 获取前N条
 
 如果不使用分页，我们可以使用last为现有sql，增加limit语句，只返回n条数据。
 

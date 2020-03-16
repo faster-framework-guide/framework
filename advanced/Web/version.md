@@ -2,9 +2,12 @@
 在前后端分离、rest接口盛行的当下，接口的版本控制是一个成熟的系统所应该拥有的。
 web模块提供的版本控制，可以方便我们快速构建一个基于版本的api接口。
 
+
+> 如果是微服务级别的系统，那么本组件将不适用于您，建议您在网关层做接口的多版本控制。
+
 ## 快速开始
 
-版本管理默认为开启状态。可以通过faster.version.enabled=fasle关闭。
+版本管理默认为开启状态。可以通过app.version.enabled=fasle关闭。
 
 ### 建立包
 
@@ -115,7 +118,7 @@ cn.org.faster.test.v2.user;
 
 此时将会自动为您设置接口版本，如上述示例中所示。
 
-您可以通过faster.version.parse-package-version=false关闭此功能。
+您可以通过app.version.parse-package-version=false关闭此功能。
 
 
 ## @ApiVersion注解
@@ -161,3 +164,15 @@ faster:
 当然还可以使用@ApiVersion(discard=true)注解来废弃版本。
 
 注意：如果parse-package-version=true，此时将需要使用@ApiVersion(discard=true, overrideDiscard = true)来使得注解生效。
+
+
+## 配置列表
+
+多版本组件的所以配置均在app.version节点下。
+
+
+属性|说明|类型|默认值
+---|---|---|---
+enabled|是否开启版本控制|boolean |true
+minimumVersion|最小版本号，小于该版本号返回版本过时|int|-
+parsePackageVersion|通过包名解析版本号，包名中存在v1、v2时解析|boolean|true

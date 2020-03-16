@@ -1,11 +1,7 @@
 # Web模块
 
-本章介绍web模块，您可以引入cn.org.faster.spring-boot-starter-web并引入web配置开启web模块。
-通常来讲，web模块与mybatis模块作为项目必须模块。
+Web模块是框架的基础模块，它是必须引用的一个模块，在您进行web开发之前，首先您需要熟悉Web模块的使用。
 
-```
-<dependency>
-    <groupId>cn.org.faster</groupId>
-    <artifactId>spring-boot-starter-web</artifactId>
-</dependency>
-```
+Web模块为大家默认提供了接口的请求响应json处理、异常处理、文件上传与下载、日志打印、freemarker模板渲染配置等基础功能。
+
+本章我们将介绍web模块下内置的组件，并教会您如何使用。
