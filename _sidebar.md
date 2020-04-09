@@ -17,7 +17,6 @@
         * [快速开始](advanced/Web/quickstart.md)
         * [多版本](advanced/Web/version.md)
         * [异常处理](advanced/Web/errorhandler.md)
-        * [授权](advanced/Web/auth.md)
         * [文件上传](advanced/Web/upload.md)
         * [图形验证码](advanced/Web/captcha.md)
         * [消息体加密](advanced/Web/secret.md)
