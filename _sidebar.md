@@ -5,6 +5,7 @@
         * [Maven](intro/devenv/Maven.md)
         * [Intellij Idea](intro/devenv/Idea.md)
         * [Lombok](intro/devenv/Lombok.md)
+        * [SourceTree](intro/devenv/SourceTree.md)
     * [快速启动](intro/quickstart/)
         * [创建项目](intro/quickstart/createproject.md)
         * [配置](intro/quickstart/config.md)
